@@ -1,0 +1,12 @@
+format = '$directory$git_branch$character'
+add_newline = false
+
+[directory]
+format = '[$path]($style) '
+
+[git_branch]
+format = '[$branch]($style) '
+
+[character]
+success_symbol = '[>](green)'
+error_symbol = '[>](red)'
