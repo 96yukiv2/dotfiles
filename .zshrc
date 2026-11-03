@@ -10,6 +10,7 @@ setopt SHARE_HISTORY
 
 autoload -Uz compinit
 compinit
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
 eval "$(mise activate zsh)"
 eval "$(zoxide init zsh)"
