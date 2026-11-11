@@ -8,22 +8,26 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt SHARE_HISTORY
 
-# Keep built-in completion without a plugin manager.
 autoload -Uz compinit
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 compinit
 
-# CLI shortcuts
 alias lg='lazygit'
 alias ls='eza'
 alias ll='eza -la'
+alias cat='bat'
+lt() {
+  local level=2
+  if [[ "$1" == <-> ]]; then
+    level="$1"
+    shift
+  fi
+  eza --tree --level="$level" "$@"
+}
 
-# Show the complete output instead of opening a pager.
 export BAT_PAGING=never
 
 eval "$(mise activate zsh)"
 eval "$(zoxide init zsh)"
 source <(fzf --zsh)
 eval "$(starship init zsh)"
-
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
