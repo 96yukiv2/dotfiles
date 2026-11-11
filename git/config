@@ -7,5 +7,6 @@
 [push]
     autoSetupRemote = true
 
-[include]
-    path = ~/.config/git/config.local
+[user]
+    name =
+    email =
